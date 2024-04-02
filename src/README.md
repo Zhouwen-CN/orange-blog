@@ -10,7 +10,6 @@ heroFullScreen: false
 bgImage: /assets/images/blog_cover_image.png
 bgImageDark: /assets/images/blog_cover_image_dark.png
 
-
 projects:
   - icon: project
     name: 项目名称
@@ -31,6 +30,4 @@ projects:
     name: 文章名称
     desc: 文章详细描述
     link: https://你的文章链接
-
-footer: 自定义你的页脚文字
 ---

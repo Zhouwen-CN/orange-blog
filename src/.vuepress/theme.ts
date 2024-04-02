@@ -1,84 +1,69 @@
-import { hopeTheme } from "vuepress-theme-hope";
-import navbar from "./navbar.js";
-import sidebar from "./sidebar.js";
-import { MR_HOPE_AVATAR } from "./logo.js";
+import { hopeTheme } from 'vuepress-theme-hope';
+import navbar from './navbar.js';
+import sidebar from './sidebar.js';
 
 export default hopeTheme({
-  hostname: "https://mister-hope.github.io",
+  favicon: '/favicon.ico',
+  hostname: 'https://zhouwen-cn.gitee.io',
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
+    name: 'Mr.陈',
+    url: 'https://gitee.com/Zhouwen-CN',
+    email: '597879949@qq.com',
+  },
+  license: 'MIT',
+
+  iconAssets: 'fontawesome-with-brands',
+
+  logo: 'https://theme-hope-assets.vuejs.press/logo.svg',
+
+  // 导航栏右侧gitee图标
+  repo: 'https://gitee.com/Zhouwen-CN/orange-blog.git',
+  repoLabel: 'Gitee',
+  docsBranch: 'master',
+
+  // 导航栏布局
+  navbarLayout: {
+    start: ['Brand'],
+    center: ['Links', 'Search'],
+    end: ['Language', 'Repo', 'Outlook'],
   },
 
-  iconAssets: "fontawesome-with-brands",
-
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
-
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
-
-  docsDir: "src",
+  docsDir: 'src',
 
   // 导航栏
   navbar,
+  navbarAutoHide: 'always',
 
   // 侧边栏
   sidebar,
 
   // 页脚
-  footer: "默认页脚",
+  footer: '',
   displayFooter: true,
 
   // 博客相关
   blog: {
-    description: "一个大数据开发",
-    intro: "/intro.html",
+    avatar: '/assets/images/profile_picture.jpg',
+    roundAvatar: true,
+    description: '一只程序猿',
+    intro: '/intro.html',
     medias: {
-      Baidu: "https://example.com",
-      BiliBili: "https://example.com",
-      Bitbucket: "https://example.com",
-      Dingding: "https://example.com",
-      Discord: "https://example.com",
-      Dribbble: "https://example.com",
-      Email: "mailto:info@example.com",
-      Evernote: "https://example.com",
-      Facebook: "https://example.com",
-      Flipboard: "https://example.com",
-      Gitee: "https://example.com",
-      GitHub: "https://example.com",
-      Gitlab: "https://example.com",
-      Gmail: "mailto:info@example.com",
-      Instagram: "https://example.com",
-      Lark: "https://example.com",
-      Lines: "https://example.com",
-      Linkedin: "https://example.com",
-      Pinterest: "https://example.com",
-      Pocket: "https://example.com",
-      QQ: "https://example.com",
-      Qzone: "https://example.com",
-      Reddit: "https://example.com",
-      Rss: "https://example.com",
-      Steam: "https://example.com",
-      Twitter: "https://example.com",
-      Wechat: "https://example.com",
-      Weibo: "https://example.com",
-      Whatsapp: "https://example.com",
-      Youtube: "https://example.com",
-      Zhihu: "https://example.com",
-      MrHope: ["https://mister-hope.com", MR_HOPE_AVATAR],
+      Gitee: 'https://gitee.com/Zhouwen-CN',
+      GitHub: 'https://github.com/Zhouwen-CN',
     },
   },
 
   // 加密配置
   encrypt: {
     config: {
-      "/demo/encrypt.html": ["1234"],
+      '/usage/encrypt.html': ['1234'],
     },
   },
 
   // 多语言配置
   metaLocales: {
-    editLink: "在 GitHub 上编辑此页",
+    editLink: '在 GitHub 上编辑此页',
   },
 
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
@@ -87,6 +72,37 @@ export default hopeTheme({
   // 在这里配置主题提供的插件
   plugins: {
     blog: true,
+    // 代码主题，当前默认值
+    prismjs: {
+      light: 'one-light',
+      dark: 'one-dark',
+    },
+    // 搜索插件
+    searchPro: {
+      autoSuggestions: false,
+      resultHistoryCount: 0,
+      queryHistoryCount: 5,
+      searchDelay: 300,
+      // 过滤需要检索的页面
+      filter: (page) => {
+        return /^\/(?:b(?:igdata|ackend)|frontend)\/.+$/.test(page.data.path);
+      },
+      // 添加自定义索引字段
+      customFields: [
+        {
+          getter: (page) => {
+            return page.frontmatter.category as string[];
+          },
+          formatter: '分类：$content',
+        },
+        {
+          getter: (page) => {
+            return page.frontmatter.tag as string[];
+          },
+          formatter: '标签：$content',
+        },
+      ],
+    },
 
     // 在启用之前需要安装 @waline/client
     // 警告: 这是一个仅供演示的测试服务器，在生产环境中请自行部署并使用自己的服务器！
@@ -96,7 +112,7 @@ export default hopeTheme({
     // },
 
     components: {
-      components: ["Badge", "VPCard"],
+      components: ['Badge', 'VPCard', 'VPBanner'],
     },
 
     // 此处开启了很多功能用于演示，你应仅保留用到的功能。
@@ -113,13 +129,13 @@ export default hopeTheme({
       mark: true,
       stylize: [
         {
-          matcher: "Recommended",
+          matcher: 'Recommended',
           replacer: ({ tag }) => {
-            if (tag === "em")
+            if (tag === 'em')
               return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
+                tag: 'Badge',
+                attrs: { type: 'tip' },
+                content: 'Recommended',
               };
           },
         },

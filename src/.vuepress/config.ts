@@ -1,12 +1,12 @@
-import { defineUserConfig } from "vuepress";
-import theme from "./theme.js";
+import { defineUserConfig } from 'vuepress';
+import theme from './theme.js';
 
 export default defineUserConfig({
-  base: "/",
+  base: '/orange-blog/',
 
-  lang: "zh-CN",
-  title: "橙子博客",
-  description: "橙子博客",
+  lang: 'zh-CN',
+  title: '橙子博客',
+  description: '橙子博客',
 
   theme,
 

@@ -2,7 +2,7 @@ import { defineUserConfig } from 'vuepress';
 import theme from './theme.js';
 
 export default defineUserConfig({
-  base: '/orange-blog-web/',
+  base: '/',
 
   lang: 'zh-CN',
   title: '橙子博客',

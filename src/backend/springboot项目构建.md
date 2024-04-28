@@ -12,7 +12,7 @@ tag:
 
 :sunny: 文章主要介绍如何使用 `springboot` 进行快速开发
 
-- 通过 mybatis-plus，一键生成 mapper、service、controller
+- 通过 mybatis-plus-generator，一键生成 mapper、service、controller
 - 通过 BaseController 使每个生成的 Controller 都具备简单的增删改查功能
 
 <!-- more -->
@@ -51,7 +51,7 @@ tag:
 2. 通过 mvnrepository 查询依赖发现最新版本为 3.5.6
 3. 通过查看最新版本依赖发现 springboot 版本为 3.2.0
 
-所以就可以确定了 springboot 和 mybatis-plus 的版本
+就可以确定了 springboot 和 mybatis-plus 的版本
 :::
 
 ![mvnrepository](./images/Snipaste_2024-04-28_10-49-24.png)
@@ -411,7 +411,7 @@ public abstract class BaseController<T> {
 :::warning 注意
 这个时候，我们想让生成的代码都继承这个 base controller
 
-就需要修改代码生成的模板，我这边已经改好了，直接使用即可
+就需要修改代码生成的模板，这边已经改好了，直接使用即可
 :::
 
 ## 4 修改代码生成模板
@@ -722,14 +722,14 @@ public class MybatisGeneratorUtil {
 
 :::
 
-重新生成代码，是否重写可以在代码生成工具里面修改
+重新生成代码，是否重写可以在代码生成工具类里面修改
 
 ![修改模板文件后](./images/Snipaste_2024-04-28_12-27-28.png)
 
 ::: important
 可以看到通过修改模板文件的方式基本实现了需求
 
-这些我们只要生成代码，不管生成多少个 controller，使其都具备基本的增删改查能力
+现在我们只要生成代码，不管生成多少个 controller，使其都具备基本的增删改查能力
 :::
 
 ## 5 mybatis-plus 分页插件和字段填充
@@ -778,16 +778,16 @@ public class MybatisPlusConfig implements MetaObjectHandler {
 :::
 
 ::: tip 提示
-当然，mybatis-plus 还提供了一些开箱即用的功能
+当然，mybatis-plus 还提供了一些好玩的开箱即用的功能
 
 比如：逻辑删除，乐观锁等等，这里就不一一展开了
 :::
 
 ## 6 使用 aspectj 控制事务
 
-通常使用注解的方式控制事务，但是当业务复杂时，注解的方式会变得繁琐（这里主要是学习为主）
+通常使用注解的方式控制事务，但是当业务复杂时，注解的方式会变得繁琐
 
-这里使用 `aspectj` ，只要是 service.impl 包下符合命名规则的方法，都纳入事务控制
+这里使用 `aspectj` ，只要是 com.yeeiee.service.impl 包下符合命名规则的方法，都纳入事务控制
 
 添加依赖
 
@@ -866,7 +866,7 @@ public class MetaToolAppApplication {
 }
 ```
 
-## 7 生成多张表增删改查 cean
+## 7 最佳实战
 
 一件生成多张表的增删改查
 

@@ -18,9 +18,9 @@ export default hopeTheme({
 
   // 改成本地，baseUrl + 静态资源地址
   iconAssets: [
-    '/orange-blog-web/assets/fontawesome/brands.min.js',
-    '/orange-blog-web/assets/fontawesome/fontawesome.min.js',
-    '/orange-blog-web/assets/fontawesome/solid.min.js',
+    '/assets/fontawesome/brands.min.js',
+    '/assets/fontawesome/fontawesome.min.js',
+    '/assets/fontawesome/solid.min.js',
   ],
 
   logo: 'https://theme-hope-assets.vuejs.press/logo.svg',

@@ -25,7 +25,7 @@ kerberos 协议存在的组成：
 
 :::
 
-![kerberos角色流程图](https://gitee.com/Zhouwen-CN/orange-blog-pictures/raw/master/images/202404032105528.png)
+![kerberos角色流程图](./images/202404032105528.png)
 
 ## 1 安装
 

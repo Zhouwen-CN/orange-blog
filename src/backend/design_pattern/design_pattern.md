@@ -52,7 +52,7 @@ Java 中的代理按照代理类生成时机不同又分为静态代理和动态
 
 如果要买火车票的话，需要去火车站买票，坐车到火车站，排队等一系列的操作，显然比较麻烦。而火车站在多个地方都有代售点，我们去代售点买票就方便很多了。这个例子其实就是典型的代理模式，火车站是目标对象，代售点是代理对象。类图如下：
 
-![](.\img\静态代理.png)
+![](./images/静态代理.png)
 
 代码如下：
 
@@ -451,7 +451,7 @@ TrainStation proxyObject = factory.getProxyObject();
 
 如果去欧洲国家去旅游的话，他们的插座如下图最左边，是欧洲标准。而我们使用的插头如下图最右边的。因此我们的笔记本电脑，手机在当地不能直接充电。所以就需要一个插座转换器，转换器第 1 面插入当地的插座，第 2 面供我们充电，这样使得我们的插头在当地能使用。生活中这样的例子很多，手机充电器（将 220v 转换为 5v 的电压），读卡器等，其实就是使用到了适配器模式。
 
-![](.\img\转接头.png)
+![](./images/转接头.png)
 
 **定义：**
 
@@ -477,7 +477,7 @@ TrainStation proxyObject = factory.getProxyObject();
 
 类图如下：
 
-![](./img/适配器模式.png)
+![](./images/适配器模式.png)
 
 代码如下：
 
@@ -573,7 +573,7 @@ public class Client {
 
 我们使用对象适配器模式将读卡器的案例进行改写。类图如下：
 
-![](.\img\对象适配器模式.png)
+![](./images/对象适配器模式.png)
 
 代码如下：
 
@@ -642,7 +642,7 @@ return sd.read(cbuf, offset, length);
 
 如上代码中的 sd（StreamDecoder 类对象），在 Sun 的 JDK 实现中，实际的方法实现是对 sun.nio.cs.StreamDecoder 类的同名方法的调用封装。类结构图如下：
 
-![](https://gitee.com/Zhouwen-CN/orange-blog-pictures/raw/master/images/202404082129492.png)
+![](./images/202404082129492.png)
 
 从上图可以看出：
 
@@ -661,7 +661,7 @@ return sd.read(cbuf, offset, length);
 
 快餐店有炒面、炒饭这些快餐，可以额外附加鸡蛋、火腿、培根这些配菜，当然加配菜需要额外加钱，每个配菜的价钱通常不太一样，那么计算总价就会显得比较麻烦。
 
-![](./img/装饰者模式-使用前.png)
+![](./images/装饰者模式-使用前.png)
 
 使用继承的方式存在的问题：
 
@@ -690,7 +690,7 @@ return sd.read(cbuf, offset, length);
 
 类图如下：
 
-![](./img/装饰者模式.png)
+![](./images/装饰者模式.png)
 
 代码如下：
 
@@ -875,7 +875,7 @@ public class Demo {
 
 使用起来感觉确实像是装饰者模式，接下来看它们的结构：
 
-![](.\img\装饰者模式-jdk源码.png)
+![](./images/装饰者模式-jdk源码.png)
 
 > <font color="red">小结：</font>
 >
@@ -903,7 +903,7 @@ public class Demo {
 
 现在有一个需求，需要创建不同的图形，并且每个图形都有可能会有不同的颜色。我们可以利用继承的方式来设计类的关系：
 
-![](.\img\image-20200207194617620.png)
+![](./images/image-20200207194617620.png)
 
 我们可以发现有很多的类，假如我们再增加一个形状或再增加一种颜色，就需要创建更多的类。
 
@@ -930,7 +930,7 @@ public class Demo {
 
 类图如下：
 
-![](.\img\桥接模式.png)
+![](./images/桥接模式.png)
 
 代码如下：
 
@@ -1026,7 +1026,7 @@ public class Client {
 
 外观（Facade）模式是“迪米特法则”的典型应用
 
-![](.\img\外观模式引入.jpg)
+![](./images/外观模式引入.jpg)
 
 ### 5.5.2 结构
 
@@ -1041,7 +1041,7 @@ public class Client {
 
 小明的爷爷已经 60 岁了，一个人在家生活：每次都需要打开灯、打开电视、打开空调；睡觉时关闭灯、关闭电视、关闭空调；操作起来都比较麻烦。所以小明给爷爷买了智能音箱，可以通过语音直接控制这些智能家电的开启和关闭。类图如下：
 
-![](./img/外观模式.png)
+![](./images/外观模式.png)
 
 代码如下：
 
@@ -1150,11 +1150,11 @@ public class Client {
 
 使用 tomcat 作为 web 容器时，接收浏览器发送过来的请求，tomcat 会将请求信息封装成 ServletRequest 对象，如下图 ① 处对象。但是大家想想 ServletRequest 是一个接口，它还有一个子接口 HttpServletRequest，而我们知道该 request 对象肯定是一个 HttpServletRequest 对象的子实现类对象，到底是哪个类的对象呢？可以通过输出 request 对象，我们就会发现是一个名为 RequestFacade 的类的对象。
 
-![](./img/image-20200207234545691.png)
+![](./images/image-20200207234545691.png)
 
 RequestFacade 类就使用了外观模式。先看结构图：
 
-![](./img/外观模式-jdk源码解析.png)
+![](./images/外观模式-jdk源码解析.png)
 
 **为什么在此处使用外观模式呢？**
 
@@ -1164,7 +1164,7 @@ RequestFacade 类就使用了外观模式。先看结构图：
 
 ### 5.6.1 概述
 
-![](./img/image-20200208180417291.png)
+![](./images/image-20200208180417291.png)
 
 对于这个图片肯定会非常熟悉，上图我们可以看做是一个文件系统，对于这样的结构我们称之为树形结构。在树形结构中可以通过调用某个方法来遍历整个树，当我们找到某个叶子节点后，就可以对叶子节点进行相关的操作。可以将这颗树理解成一个大的容器，容器里面包含很多的成员对象，这些成员对象即可是容器对象也可以是叶子对象。但是由于容器对象和叶子对象在功能上面的区别，使得我们在使用的过程中必须要区分容器对象和叶子对象，但是这样就会给客户带来不必要的麻烦，作为客户而已，它始终希望能够一致的对待容器对象和叶子对象。
 
@@ -1186,11 +1186,11 @@ RequestFacade 类就使用了外观模式。先看结构图：
 
 如下图，我们在访问别的一些管理系统时，经常可以看到类似的菜单。一个菜单可以包含菜单项（菜单项是指不再包含其他内容的菜单条目），也可以包含带有其他菜单项的菜单，因此使用组合模式描述菜单就很恰当，我们的需求是针对一个菜单，打印出其包含的所有菜单以及菜单项的名称。
 
-![](./img/image-20200208182322313.png)
+![](./images/image-20200208182322313.png)
 
 要实现该案例，我们先画出类图：
 
-![](./img/组合模式.png)
+![](./images/组合模式.png)
 
 **代码实现：**
 
@@ -1307,7 +1307,7 @@ MenuItem 是菜单项，不能再有子菜单，所以添加菜单，移除菜�
 
   在安全组合模式中，在抽象构件角色中没有声明任何用于管理成员对象的方法，而是在树枝节点 `Menu` 类中声明并实现这些方法。安全组合模式的缺点是不够透明，因为叶子构件和容器构件具有不同的方法，且容器构件中那些用于管理成员对象的方法没有在抽象构件类中定义，因此客户端不能完全针对抽象编程，必须有区别地对待叶子构件和容器构件。
 
-  ![](./img/组合模式-安全性.png)
+  ![](./images/组合模式-安全性.png)
 
 ### 5.6.5 优点
 
@@ -1348,11 +1348,11 @@ MenuItem 是菜单项，不能再有子菜单，所以添加菜单，移除菜�
 
 下面的图片是众所周知的俄罗斯方块中的一个个方块，如果在俄罗斯方块这个游戏中，每个不同的方块都是一个实例对象，这些对象就要占用很多的内存空间，下面利用享元模式进行实现。
 
-<img src="./img/俄罗斯方块.jpeg" style="zoom:60%;" />
+<img src="./images/俄罗斯方块.jpeg" style="zoom:60%;" />
 
 **先来看类图：**
 
-![](./img/享元模式.png)
+![](./images/享元模式.png)
 
 **代码如下：**
 
@@ -1466,7 +1466,7 @@ public class Demo {
 
 运行上面代码，结果如下：
 
-![](./img/image-20200208212930857.png)
+![](./images/image-20200208212930857.png)
 
 为什么第一个输出语句输出的是 true，第二个输出语句输出的是 false？通过反编译软件进行反编译，代码如下：
 
@@ -1588,7 +1588,7 @@ public final class Integer extends Number implements Comparable<Integer> {
 
 炒菜的步骤是固定的，分为倒油、热油、倒蔬菜、倒调料品、翻炒等步骤。现通过模板方法模式来用代码模拟。类图如下：
 
-![](./img/模板方法模式.png)
+![](./images/模板方法模式.png)
 
 代码如下：
 
@@ -1748,11 +1748,11 @@ public abstract class InputStream implements Closeable {
 
 先看下面的图片，我们去旅游选择出行模式有很多种，可以骑自行车、可以坐汽车、可以坐火车、可以坐飞机。
 
-![](./img/image-20200210143039168.png)
+![](./images/image-20200210143039168.png)
 
 作为一个程序猿，开发需要选择一款开发工具，当然可以进行代码开发的工具有很多，可以选择 Idea 进行开发，也可以使用 eclipse 进行开发，也可以使用其他的一些开发工具。
 
-![](./img/image-20200210144457478.png)
+![](./images/image-20200210144457478.png)
 
 **定义：**
 
@@ -1772,7 +1772,7 @@ public abstract class InputStream implements Closeable {
 
 一家百货公司在定年度的促销活动。针对不同的节日（春节、中秋节、圣诞节）推出不同的促销活动，由促销员将促销活动展示给客户。类图如下：
 
-![](./img/策略模式.png)
+![](./images/策略模式.png)
 
 代码如下：
 
@@ -1944,7 +1944,7 @@ class TimSort<T> {
 
 日常生活中，我们出去吃饭都会遇到下面的场景。
 
-![](./img/image-20200211130313251.png)
+![](./images/image-20200211130313251.png)
 
 **定义：**
 
@@ -1971,7 +1971,7 @@ class TimSort<T> {
 
 类图如下：
 
-![](./img/命令模式.png)
+![](./images/命令模式.png)
 
 代码如下：
 
@@ -2209,7 +2209,7 @@ public class Demo {
 
 类图如下：
 
-![](./img/责任链模式.png)
+![](./images/责任链模式.png)
 
 代码如下：
 
@@ -2487,7 +2487,7 @@ public class Client {
 
 类图如下：
 
-![](./img/状态模式前.png)
+![](./images/状态模式前.png)
 
 代码如下：
 
@@ -2638,7 +2638,7 @@ public class Client {
 
 对上述电梯的案例使用状态模式进行改进。类图如下：
 
-![](./img/状态模式.png)
+![](./images/状态模式.png)
 
 代码如下：
 
@@ -2889,7 +2889,7 @@ public class Client {
 
 类图如下：
 
-![](./img/观察者模式.png)
+![](./images/观察者模式.png)
 
 代码如下：
 
@@ -3098,7 +3098,7 @@ public class Client {
 
 如果引入中介者模式，那么同事类之间的关系将变为星型结构，从下右图中可以看到，任何一个类的变动，只会影响的类本身，以及中介者，这样就减小了系统的耦合。一个好的设计，必定不会把所有的对象关系处理逻辑封装在本类中，而是使用一个专门的类来管理那些不属于自己的行为。
 
-![](./img/image-20200214110924010.png)
+![](./images/image-20200214110924010.png)
 
 **定义：**
 
@@ -3122,7 +3122,7 @@ public class Client {
 
 类图如下：
 
-![](./img/中介者模式.png)
+![](./images/中介者模式.png)
 
 代码如下：
 
@@ -3277,7 +3277,7 @@ public class Client {
 
 【例】定义一个可以存储学生对象的容器对象，将遍历该容器的功能交由迭代器实现，涉及到的类如下：
 
-![](./img/迭代器模式.png)
+![](./images/迭代器模式.png)
 
 代码如下：
 
@@ -3464,7 +3464,7 @@ public class ArrayList<E> extends AbstractList<E>
 
 类图如下：
 
-![](.\img\访问者模式.png)
+![](./images/访问者模式.png)
 
 代码如下：
 
@@ -3703,7 +3703,7 @@ public class Client {
 
 运行结果：
 
-![](./img/image-20200214215446638.png)
+![](./images/image-20200214215446638.png)
 
 这个结果可能出乎一些人的意料了，为什么呢？
 
@@ -3766,7 +3766,7 @@ public class Client {
 
 运行结果如下：
 
-![](./img/image-20200426233931693.png)
+![](./images/image-20200426233931693.png)
 
 **双分派实现动态绑定的本质，就是在重载方法委派的前面加上了继承体系中覆盖的环节，由于覆盖是动态的，所以重载就是动态的了。**
 
@@ -3808,7 +3808,7 @@ public class Client {
 
 备忘录角色对任何对象都提供一个接口，即宽接口，备忘录角色的内部所存储的状态就对所有对象公开。类图如下：
 
-![](./img/白箱备忘录模式.png)
+![](./images/白箱备忘录模式.png)
 
 代码如下：
 
@@ -3960,7 +3960,7 @@ public class Client {
 
 将 `RoleStateMemento` 设为 `GameRole` 的内部类，从而将 `RoleStateMemento` 对象封装在 `GameRole` 里面；在外面提供一个标识接口 `Memento` 给 `RoleStateCaretaker` 及其他对象使用。这样 `GameRole` 类看到的是 `RoleStateMemento` 所有的接口，而`RoleStateCaretaker` 及其他对象看到的仅仅是标识接口 `Memento` 所暴露出来的接口，从而维护了封装型。类图如下：
 
-![](./img/黑箱备忘录模式.png)
+![](./images/黑箱备忘录模式.png)
 
 代码如下：
 
@@ -4143,7 +4143,7 @@ public class Client {
 
 ### 6.11.1 概述
 
-![](./img/image-20200215220322641.png)
+![](./images/image-20200215220322641.png)
 
 如上图，设计一个软件用来进行加减计算。我们第一想法就是使用工具类，提供对应的加法和减法的工具方法。
 
@@ -4203,7 +4203,7 @@ value ::= integer
 
 用树形来表示符合文法规则的句子。
 
-![](./img/image-20200215225227616.png)
+![](./images/image-20200215225227616.png)
 
 ### 6.11.2 结构
 
@@ -4220,7 +4220,7 @@ value ::= integer
 
 【例】设计实现加减法的软件
 
-![](./img/解释器模式.png)
+![](./images/解释器模式.png)
 
 代码如下：
 
@@ -4464,7 +4464,7 @@ public class Client {
 
   代码运行结果如下：
 
-  ![](./img/image-20200429165544151.png)
+  ![](./images/image-20200429165544151.png)
 
 通过上面代码及结果可以看出：
 
@@ -4480,7 +4480,7 @@ Spring 大约有 20 个模块，由 1300 多个不同的文件构成。这些模
 
 核心容器、AOP 和设备支持、数据访问与集成、Web 组件、通信报文和集成测试等，下面是 Spring 框架的总体架构图：
 
-![](./img/image-20200429111324770.png)
+![](./images/image-20200429111324770.png)
 
 核心容器由 beans、core、context 和 expression（Spring Expression Language，SpEL）4 个模块组成。
 
@@ -4514,7 +4514,7 @@ spring 中 bean 用于对一个类进行封装。如下面的配置：
 
 Spring 中 Bean 的创建是典型的工厂模式，这一系列的 Bean 工厂，即 IoC 容器，为开发者管理对象之间的依赖关系提供了很多便利和基础服务，在 Spring 中有许多 IoC 容器的实现供用户选择，其相互关系如下图所示。
 
-![](./img/image-20200429185050396.png)
+![](./images/image-20200429185050396.png)
 
 其中，BeanFactory 作为最顶层的一个接口，定义了 IoC 容器的基本功能规范，BeanFactory 有三个重要的子接口：ListableBeanFactory、HierarchicalBeanFactory 和 AutowireCapableBeanFactory。但是从类图中我们可以发现最终的默认实现类是 DefaultListableBeanFactory，它实现了所有的接口。
 
@@ -4561,7 +4561,7 @@ public interface BeanFactory {
 
 BeanFactory 有一个很重要的子接口，就是 ApplicationContext 接口，该接口主要来规范容器中的 bean 对象是非延时加载，即在创建容器对象的时候就对象 bean 进行初始化，并存储到一个容器中。
 
-![](./img/image-20200430220155371.png)
+![](./images/image-20200430220155371.png)
 
 要知道工厂是如何产生对象的，我们需要看具体的 IoC 容器实现，Spring 提供了许多 IoC 容器实现，比如：
 
@@ -4582,13 +4582,13 @@ bean标签还有很多属性：
 
 其继承体系如下图所示。
 
-![](./img/image-20200429204239868.png)
+![](./images/image-20200429204239868.png)
 
 ### 7.3.3 BeanDefinitionReader 解析
 
 Bean 的解析过程非常复杂，功能被分得很细，因为这里需要被扩展的地方很多，必须保证足够的灵活性，以应对可能的变化。Bean 的解析主要就是对 Spring 配置文件的解析。这个解析过程主要通过 BeanDefinitionReader 来完成，看看 Spring 中 BeanDefinitionReader 的类结构图，如下图所示。
 
-![](./img/image-20200429204700956.png)
+![](./images/image-20200429204700956.png)
 
 看看 BeanDefinitionReader 接口定义的功能来理解它具体的作用：
 
@@ -4646,7 +4646,7 @@ public interface BeanDefinitionRegistry extends AliasRegistry {
 
 继承结构图如下：
 
-![](./img/image-20200429211132185.png)
+![](./images/image-20200429211132185.png)
 
 从上面类图可以看到 BeanDefinitionRegistry 接口的子实现类主要有以下几个：
 

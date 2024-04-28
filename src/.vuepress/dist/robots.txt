@@ -1,5 +1,0 @@
-
-User-agent:*
-Disallow:
-
-Sitemap: https://zhouwen-cn.gitee.io/orange-blog/sitemap.xml

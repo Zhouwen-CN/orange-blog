@@ -652,7 +652,7 @@ docker build -t hadoop100 .
 
 ## 3 运行截图
 
-![](https://gitee.com/Zhouwen-CN/orange-blog-pictures/raw/master/images/202403282033698.png)
-![](https://gitee.com/Zhouwen-CN/orange-blog-pictures/raw/master/images/202403282034349.png)
-![](https://gitee.com/Zhouwen-CN/orange-blog-pictures/raw/master/images/202404022049022.png)
-![](https://gitee.com/Zhouwen-CN/orange-blog-pictures/raw/master/images/202403282106542.png)
+![](./images/202403282033698.png)
+![](./images/202403282034349.png)
+![](./images/202404022049022.png)
+![](./images/202403282106542.png)

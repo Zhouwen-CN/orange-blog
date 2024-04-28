@@ -2,7 +2,7 @@
 title: 对象 Emoji
 article: false
 timeline: false
-icon: object-group
+icon: fa-solid fa-bullseye
 category:
   - 使用指南
 tag:

@@ -23,7 +23,7 @@ export default navbar([
       {
         text: '如何使用',
         link: '/usage/',
-        icon: 'laptop-code',
+        icon: 'fa-solid fa-circle-question',
       },
     ],
   },

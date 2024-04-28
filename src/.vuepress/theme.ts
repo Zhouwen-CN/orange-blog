@@ -13,7 +13,15 @@ export default hopeTheme({
   },
   license: 'MIT',
 
-  iconAssets: 'fontawesome-with-brands',
+  // jsdelivr cdn, 部署会有跨域问题
+  // iconAssets: 'fontawesome-with-brands',
+
+  // 改成本地，baseUrl + 静态资源地址
+  iconAssets: [
+    '/orange-blog/assets/fontawesome/brands.min.js',
+    '/orange-blog/assets/fontawesome/fontawesome.min.js',
+    '/orange-blog/assets/fontawesome/solid.min.js',
+  ],
 
   logo: 'https://theme-hope-assets.vuejs.press/logo.svg',
 

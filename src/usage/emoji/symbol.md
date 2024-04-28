@@ -2,7 +2,7 @@
 title: 符号 Emoji
 article: false
 timeline: false
-icon: circle-right
+icon: fa-solid fa-circle-right
 category:
   - 使用指南
 tag:

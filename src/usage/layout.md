@@ -2,7 +2,7 @@
 title: 布局
 article: false
 timeline: false
-icon: object-group
+icon: fa-solid fa-object-group
 order: 2
 category:
   - 使用指南

@@ -2,7 +2,7 @@
 title: 图标支持
 article: false
 timeline: false
-icon: icons
+icon: fa-solid fa-icons
 order: 3
 category:
   - 使用指南

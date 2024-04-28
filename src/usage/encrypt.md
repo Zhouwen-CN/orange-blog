@@ -1,7 +1,7 @@
 ---
 article: false
 timeline: false
-icon: lock
+icon: fa-solid fa-lock
 category:
   - 使用指南
 tag:

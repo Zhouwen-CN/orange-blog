@@ -1,7 +1,7 @@
 ---
 home: true
 layout: BlogHome
-icon: home
+icon: fa-solid fa-house
 title: 博客首页
 # heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 heroText: 橙子博客

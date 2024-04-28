@@ -6,7 +6,7 @@ timeline: false
 # 你可以自定义封面图片
 cover: /assets/images/cover1.jpg
 # 这是页面的图标
-icon: file
+icon: fa-solid fa-file
 # 这是侧边栏的顺序
 order: 3
 # 设置作者

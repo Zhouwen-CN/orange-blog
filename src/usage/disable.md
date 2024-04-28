@@ -2,7 +2,7 @@
 title: 布局与功能禁用
 article: false
 timeline: false
-icon: gears
+icon: fa-solid fa-gears
 order: 4
 category:
   - 使用指南

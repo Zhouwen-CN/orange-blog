@@ -2,7 +2,7 @@
 title: Markdown 展示
 article: false
 timeline: false
-icon: fab fa-markdown
+icon: fa-brands fa-markdown
 order: 2
 category:
   - 使用指南

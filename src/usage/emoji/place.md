@@ -2,7 +2,7 @@
 title: 地点 Emoji
 article: false
 timeline: false
-icon: city
+icon: fa-solid fa-city
 category:
   - 使用指南
 tag:

@@ -2,7 +2,7 @@
 title: 人物 Emoji
 article: false
 timeline: false
-icon: person
+icon: fa-solid fa-person
 category:
   - 使用指南
 tag:

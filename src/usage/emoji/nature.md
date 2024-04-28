@@ -2,7 +2,7 @@
 title: 自然 Emoji
 article: false
 timeline: false
-icon: tree
+icon: fa-solid fa-tree
 category:
   - 使用指南
 tag:

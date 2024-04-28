@@ -6,7 +6,6 @@ category:
   - 前端
 tag:
   - nodejs
-star: true
 ---
 
 # Nodejs 安装

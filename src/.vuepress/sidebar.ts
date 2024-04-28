@@ -26,7 +26,7 @@ export default sidebar({
     },
     {
       text: '如何使用',
-      icon: 'circle-info',
+      icon: 'fa-solid fa-circle-question',
       prefix: 'usage/',
       collapsible: true,
       children: 'structure',

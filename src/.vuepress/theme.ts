@@ -23,7 +23,7 @@ export default hopeTheme({
     '/assets/fontawesome/solid.min.js',
   ],
 
-  logo: 'https://theme-hope-assets.vuejs.press/logo.svg',
+  logo: '/logo.svg',
 
   // 导航栏右侧gitee图标
   repo: 'https://gitee.com/Zhouwen-CN/orange-blog.git',

@@ -2,6 +2,7 @@
 title: springboot项目构建
 icon: fa-solid fa-leaf
 date: 2024-04-28
+star: true
 category:
   - 后端
 tag:
@@ -418,7 +419,7 @@ public abstract class BaseController<T> {
 
 将模板文件放在 templates 文件夹下面
 
-::: details 代码生成模板文件
+:::: details 代码生成模板文件
 
 ::: tabs
 
@@ -638,6 +639,8 @@ package ${package.Entity};
 ```
 
 :::
+
+::::
 
 ![模板文件](./images/Snipaste_2024-04-28_12-36-08.png)
 

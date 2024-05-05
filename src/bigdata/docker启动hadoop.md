@@ -71,7 +71,7 @@ registry.cn-hangzhou.aliyuncs.com/zhouwen/apache-hadoop:3.1.3
 
 ### 1.2 docker compose
 
-::: tip 执行步骤
+执行步骤：
 
 ```bash
 #首先需要创建一个文件夹
@@ -84,10 +84,7 @@ vi docker-compose.yml
 docker compose up -d
 ```
 
-:::
-
 只有在 compose 才需要，docker run 有默认值
-::: details hadoop.env
 
 ```bash title="hadoop-compose/hadoop.env"
 HADOOP_HDFS_NN_ADDRESS=namenode
@@ -96,7 +93,6 @@ HADOOP_MR_HISTORYSERVER_ADDRESS=historyserver
 HADOOP_HIVE_ADDRESS=hive
 ```
 
-:::
 这里 replicated 3 表示这个服务会起 3 个副本，当然他还是单机
 ::: details docker-compose.yml
 

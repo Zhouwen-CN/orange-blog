@@ -1,5 +1,5 @@
 ---
-title: springboot项目构建
+title: SpringBoot 项目构建
 icon: fa-solid fa-leaf
 date: 2024-04-28
 star: true
@@ -9,7 +9,7 @@ tag:
   - springboot
 ---
 
-# springboot 项目构建
+# SpringBoot 项目构建
 
 :sunny: 文章主要介绍如何使用 `springboot` 进行快速开发
 

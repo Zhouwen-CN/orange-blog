@@ -264,15 +264,18 @@ mybatis-plus.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
 @Getter
 @Setter
 @Schema(title = "R", description = "统一响应对象")
-public class R<T> {
+public final class R<T> {
+
     @Schema(title = "是否成功")
     private boolean success;
+
     @Nullable
     @Schema(title = "数据")
     private T data;
-    @Nullable
+
     @Schema(title = "状态码")
     private int code;
+
     @Nullable
     @Schema(title = "消息")
     private String message;
@@ -289,12 +292,12 @@ public class R<T> {
         return new R<>(false, null, httpStatus.value(), httpStatus.getReasonPhrase());
     }
 
-    public static <T> R<T> error(int code, Exception e) {
-        return new R<>(false, null, code, e.getMessage());
-    }
-
     public static <T> R<T> error(HttpStatus httpStatus, Exception e) {
         return new R<>(false, null, httpStatus.value(), e.getMessage());
+    }
+
+    public static <T> R<T> error(HttpStatus httpStatus, String message) {
+        return new R<>(false, null, httpStatus.value(), message);
     }
 }
 ```
@@ -336,16 +339,16 @@ public class GlobalExceptionHandler {
 :::details BaseController.java
 
 ```java
-public abstract class BaseController<T> {
-    protected IService<T> service;
+public abstract class BaseController<S extends IService<D>, D> {
+    protected S service;
 
-    public BaseController(IService<T> service) {
+    public BaseController(S service) {
         this.service = service;
     }
 
     @Operation(summary = "分页查询")
     @GetMapping("/{size}/{current}")
-    public R<Page<T>> page(@PathVariable("size") @Parameter(description = "页面大小") Integer size,
+    public R<Page<D>> page(@PathVariable("size") @Parameter(description = "页面大小") Integer size,
                            @PathVariable("current") @Parameter(description = "当前页面") Integer current) {
         val page = service.page(new Page<>(current, size), new QueryWrapper<>());
         return R.ok(page);
@@ -353,21 +356,21 @@ public abstract class BaseController<T> {
 
     @Operation(summary = "查询所有")
     @GetMapping("/")
-    public R<List<T>> getList() {
+    public R<List<D>> getList() {
         val list = service.list();
         return R.ok(list);
     }
 
     @Operation(summary = "按照id查询")
     @GetMapping("/{id}")
-    public R<T> getById(@PathVariable("id") Long id) {
+    public R<D> getById(@PathVariable("id") Long id) {
         val one = service.getById(id);
         return R.ok(one);
     }
 
     @Operation(summary = "按照id删除")
     @DeleteMapping("/{id}")
-    public R<T> removeById(@PathVariable("id") Long id) {
+    public R<D> removeById(@PathVariable("id") Long id) {
         val status = service.removeById(id);
         if (!status) {
             throw new DmlOperationException("删除失败【id】：" + id);
@@ -377,7 +380,7 @@ public abstract class BaseController<T> {
 
     @Operation(summary = "新增")
     @PostMapping("/")
-    public R<T> save(@RequestBody T entity) {
+    public R<D> save(@RequestBody D entity) {
         val status = service.save(entity);
         if (!status) {
             throw new DmlOperationException("新增失败【entity】：" + entity);
@@ -387,7 +390,7 @@ public abstract class BaseController<T> {
 
     @Operation(summary = "更新")
     @PutMapping("/")
-    public R<T> update(@RequestBody T entity) {
+    public R<D> update(@RequestBody D entity) {
         val status = service.updateById(entity);
         if (!status) {
             throw new DmlOperationException("更新失败【entity】：" + entity);
@@ -397,7 +400,7 @@ public abstract class BaseController<T> {
 
     @Operation(summary = "新增或者更新")
     @PostMapping("/save")
-    public R<T> saveOrUpdate(@RequestBody T entity) {
+    public R<D> saveOrUpdate(@RequestBody D entity) {
         val status = service.saveOrUpdate(entity);
         if (!status) {
             throw new DmlOperationException("upsert失败【entity】：" + entity);
@@ -425,11 +428,11 @@ public abstract class BaseController<T> {
 
 @tab controller.java.ftl
 
-```freemarker
+```
 package ${package.Controller};
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import ${package.Entity}.${entity};
+import ${package.Service}.${table.serviceName};
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.RequestMapping;
 <#if restControllerStyle>
@@ -460,9 +463,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
     class ${table.controllerName}<#if superControllerClass??> : ${superControllerClass}()</#if>
 <#else>
     <#if superControllerClass??>
-        public class ${table.controllerName} extends ${superControllerClass}<${entity}> {
+        public class ${table.controllerName} extends ${superControllerClass}<${table.serviceName},${entity}> {
 
-        public ${table.controllerName}(IService<${entity}> service) {
+        public ${table.controllerName}(${table.serviceName} service) {
         super(service);
         }
     <#else>
@@ -474,7 +477,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @tab entity.java.ftl
 
-```freemarker
+```
 package ${package.Entity};
 
 <#list table.importPackages as pkg>
@@ -727,7 +730,9 @@ public class MybatisGeneratorUtil {
 
 重新生成代码，是否重写可以在代码生成工具类里面修改
 
-![修改模板文件后](./images/Snipaste_2024-04-28_12-27-28.png)
+![生成的Controller](./images/Snipaste_2024-04-28_12-27-28.png)
+
+![生成的Entity](./images/Snipaste_2024-05-11_09-18-34.png)
 
 ::: important
 可以看到通过修改模板文件的方式基本实现了需求
@@ -873,7 +878,7 @@ public class MetaToolAppApplication {
 
 一件生成多张表的增删改查
 
-![generator tables](./images/Snipaste_2024-04-28_13-16-05.png)
+![generator database](./images/Snipaste_2024-04-28_13-16-05.png)
 
 查看 swagger ui
 

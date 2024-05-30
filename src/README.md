@@ -9,25 +9,24 @@ tagline: 最累的时候，家人是你最好的归宿
 heroFullScreen: false
 bgImage: /assets/images/blog_cover_image.png
 bgImageDark: /assets/images/blog_cover_image_dark.png
-
 projects:
-  - icon: project
-    name: 项目名称
-    desc: 项目详细描述
-    link: https://你的项目链接
+  - icon: link
+    name: 链接名称
+    desc: vuepress-theme-hope
+    link: https://theme-hope.vuejs.press/zh/
 
   - icon: link
     name: 链接名称
-    desc: 链接详细描述
-    link: https://链接地址
+    desc: vue
+    link: https://cn.vuejs.org/guide/introduction.html
 
-  - icon: book
-    name: 书籍名称
-    desc: 书籍详细描述
-    link: https://你的书籍链接
+  - icon: link
+    name: 链接名称
+    desc: npm
+    link: https://www.npmjs.com/
 
-  - icon: article
-    name: 文章名称
-    desc: 文章详细描述
-    link: https://你的文章链接
+  - icon: link
+    name: 链接名称
+    desc: element-plus
+    link: https://element-plus.org/zh-CN/component/overview.html
 ---

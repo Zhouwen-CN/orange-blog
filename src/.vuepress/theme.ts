@@ -3,8 +3,7 @@ import navbar from './navbar.js';
 import sidebar from './sidebar.js';
 
 export default hopeTheme({
-  favicon: '/favicon.ico',
-  hostname: 'https://zhouwen-cn.gitee.io',
+  hostname: 'https://orange-blog-3wu.pages.dev',
 
   author: {
     name: 'Mr.陈',
@@ -12,10 +11,10 @@ export default hopeTheme({
     email: '597879949@qq.com',
   },
   license: 'MIT',
+  favicon: '/favicon.ico',
 
   // jsdelivr cdn, 部署会有跨域问题
   // iconAssets: 'fontawesome-with-brands',
-
   // 改成本地，baseUrl + 静态资源地址
   iconAssets: [
     '/assets/fontawesome/brands.min.js',
@@ -23,32 +22,40 @@ export default hopeTheme({
     '/assets/fontawesome/solid.min.js',
   ],
 
-  logo: '/logo.svg',
+  // 暗黑模式切换
+  darkmode: 'toggle',
+  // 全屏按钮
+  fullscreen: true,
 
-  // 导航栏右侧gitee图标
-  repo: 'https://gitee.com/Zhouwen-CN/orange-blog.git',
-  repoLabel: 'Gitee',
-  docsBranch: 'master',
-
+  // 导航栏
+  navbar,
   // 导航栏布局
   navbarLayout: {
     start: ['Brand'],
     center: ['Links', 'Search'],
     end: ['Language', 'Repo', 'Outlook'],
   },
-
-  docsDir: 'src',
-
-  // 导航栏
-  navbar,
-  navbarAutoHide: 'always',
+  // 导航栏图标
+  logo: '/logo.svg',
+  // 导航栏右侧gitee图标
+  repo: 'https://gitee.com/Zhouwen-CN/orange-blog.git',
+  repoLabel: 'Gitee',
 
   // 侧边栏
   sidebar,
+  // 侧边栏排序规则
+  sidebarSorter: ['readme', 'order', 'title', 'filename'],
 
-  // 页脚
-  footer: '',
-  displayFooter: true,
+  // 页面信息
+  pageInfo: [
+    'Author',
+    'Original',
+    'Date',
+    'Category',
+    'Tag',
+    'ReadingTime',
+    'Word',
+  ],
 
   // 博客相关
   blog: {
@@ -59,7 +66,9 @@ export default hopeTheme({
     medias: {
       Gitee: 'https://gitee.com/Zhouwen-CN',
       GitHub: 'https://github.com/Zhouwen-CN',
+      Email: 'mailto:597879949@qq.com',
     },
+    articlePerPage: 5,
   },
 
   // 加密配置
@@ -73,6 +82,13 @@ export default hopeTheme({
   metaLocales: {
     editLink: '在 GitHub 上编辑此页',
   },
+  // 页脚
+  footer: '',
+  displayFooter: true,
+  // 文档在仓库中的目录
+  docsDir: 'src',
+  // 文档所在分支
+  docsBranch: 'master',
 
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
   // hotReload: true,
@@ -80,7 +96,7 @@ export default hopeTheme({
   // 在这里配置主题提供的插件
   plugins: {
     blog: true,
-    // 代码主题，当前默认值
+    // 代码主题
     prismjs: {
       light: 'one-light',
       dark: 'one-dark',

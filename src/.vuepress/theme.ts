@@ -83,8 +83,8 @@ export default hopeTheme(
     metaLocales: {
       editLink: '在 GitHub 上编辑此页',
     },
-    // 页脚
-    footer: '',
+    // 页脚，不能不写，不然站点运行时间不显示
+    footer: ' ',
     displayFooter: true,
     // 文档在仓库中的目录
     docsDir: 'src',

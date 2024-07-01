@@ -1,7 +1,6 @@
 ---
 title: SpringSecurity 实战
 icon: fa-solid fa-shield-halved
-date: 2024-05-09
 star: true
 category:
   - 后端

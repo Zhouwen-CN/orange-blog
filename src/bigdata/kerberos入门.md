@@ -1,8 +1,6 @@
 ---
 title: Kerberos入门
 icon: fa-solid fa-dog
-date: 2024-04-03
-star: true
 category:
   - 大数据
 tag:

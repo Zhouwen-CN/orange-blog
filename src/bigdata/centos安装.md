@@ -1,8 +1,6 @@
 ---
 title: Centos7 安装
 icon: fa-brands fa-centos
-date: 2024-03-29
-star: true
 category:
   - 大数据
 tag:

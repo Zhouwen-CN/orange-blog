@@ -1,7 +1,6 @@
 ---
 title: Docker 快速启动 Hadoop
 icon: fa-solid fa-republican
-date: 2024-03-28
 star: true
 category:
   - 大数据

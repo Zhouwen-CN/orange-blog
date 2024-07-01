@@ -1,7 +1,6 @@
 ---
 title: SpringBoot 项目构建
 icon: fa-solid fa-leaf
-date: 2024-04-28
 star: true
 category:
   - 后端

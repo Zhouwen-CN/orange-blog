@@ -1,7 +1,6 @@
 ---
 title: Nodejs安装
 icon: fa-brands fa-node
-date: 2024-03-27
 category:
   - 前端
 tag:

@@ -60,7 +60,7 @@ export default hopeTheme(
 
     // 博客相关
     blog: {
-      avatar: '/assets/images/profile_picture.jpg',
+      avatar: '/assets/images/profile_picture1.jpg',
       roundAvatar: true,
       description: '一只程序猿',
       intro: '/intro.html',

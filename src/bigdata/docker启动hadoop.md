@@ -1,6 +1,6 @@
 ---
 title: Docker 快速启动 Hadoop
-icon: fa-solid fa-republican
+icon: fa-brands fa-docker
 star: true
 category:
   - 大数据

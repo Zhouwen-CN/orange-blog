@@ -9,7 +9,7 @@ tag:
 
 # Hadoop 入门
 
-:elephant: 文章主要介绍大数据和 `hadoop` 的相关概念，以及 `hadoop` 的安装部署。
+:elephant: Hadoop 是一个由 Apache 基金会所开发的`分布式系统基础架构`。主要解决，海量数据的`存储`和海量数据的`分析计算`问题。
 
 <!-- more -->
 

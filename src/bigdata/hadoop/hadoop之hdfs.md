@@ -1,5 +1,5 @@
 ---
-title: 2、Hadoop 之 HDFS
+title: 2、Hadoop 之 Hdfs
 icon: fa-solid fa-copy
 category:
   - 大数据
@@ -7,7 +7,7 @@ tag:
   - hadoop
 ---
 
-# Hadoop 之 HDFS
+# Hadoop 之 Hdfs
 
 :open_file_folder: `HDFS` 定义 HDFS（Hadoop Distributed File System），它是一个分布式文件系统，用于存储文件，通过目录树来定位文件。
 

@@ -1,6 +1,6 @@
 ---
 title: SpringBoot 项目构建
-icon: fa-solid fa-leaf
+icon: fa-solid fa-trowel
 star: true
 category:
   - 后端

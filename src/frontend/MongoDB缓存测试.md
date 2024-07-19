@@ -1,6 +1,6 @@
 ---
 title: MongoDB 缓存测试
-icon: fa-solid fa-leaf
+icon: fa-brands fa-envira
 category:
   - 前端
 tag:
